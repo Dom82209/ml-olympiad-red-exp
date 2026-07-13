@@ -68,3 +68,20 @@
 - считается доля пар, где reward для `chosen` выше reward для `rejected`;
 - ноутбук печатает `Task 3 Reward Model pairwise accuracy = ...`;
 - ответ выбирается по интервалу, в который попало значение accuracy.
+
+## Задача 4 — DPO по качеству
+
+На четвёртом этапе style-aligned модель дополнительно оптимизируется на датасете `good_bad.jsonl`.
+
+Настройка пар:
+
+- `chosen` — хороший ответ;
+- `rejected` — плохой ответ.
+
+Метрика задачи 4:
+
+- implicit-preference accuracy на `public_test_quality.jsonl`;
+- генерация не используется;
+- для каждого ответа считается средний logprob на токен ответа;
+- ноутбук печатает `Task 4 Quality DPO implicit-preference accuracy = ...`;
+- ответ выбирается по интервалу, в который попало значение accuracy.
