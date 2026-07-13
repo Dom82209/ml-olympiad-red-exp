@@ -52,3 +52,19 @@
 - генерация greedy: `do_sample=False`;
 - ноутбук печатает `Task 2 Style DPO P_simple = ...`;
 - ответ выбирается по интервалу, в который попало значение `P_simple`.
+
+## Задача 3 — Reward Model
+
+На третьем этапе обучается отдельная модель-оценщик качества на датасете `good_bad.jsonl`.
+
+Настройка пар:
+
+- `chosen` — хороший простой ответ;
+- `rejected` — плохой простой ответ.
+
+Метрика задачи 3:
+
+- pairwise accuracy на `public_test_quality.jsonl`;
+- считается доля пар, где reward для `chosen` выше reward для `rejected`;
+- ноутбук печатает `Task 3 Reward Model pairwise accuracy = ...`;
+- ответ выбирается по интервалу, в который попало значение accuracy.
